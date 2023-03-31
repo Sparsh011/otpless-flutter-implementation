@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:otpless_flutter/otpless_flutter.dart';
 
@@ -16,15 +17,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demoooo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -75,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
@@ -83,19 +76,26 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: [
-            CupertinoButton.filled(
+            ElevatedButton(
               child: const Text("Continue With Whatsapp"),
               onPressed: () {
                 initiateWhatsappLogin(
-                  "https://otpless.authlink.me?redirectUri=otpless://otpless",
+                  "https://helloworld.authlink.me?redirectUri=helloworldotpless://otpless",
                 );
               },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green, // set the background color to blue
+                minimumSize: const Size(250, 50), // set the button's minimum size (width x height)
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24), // set the button's padding
+              ),
             ),
           ],
         ),
       ),
     );
   }
+
+
 
 
 

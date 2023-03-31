@@ -19,8 +19,10 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:host="otpless"
-                    android:scheme="otpless" />
+                    android:scheme="helloworldotpless" />
             </intent-filter>
         </activity>
     </application>
 </manifest>
+
+
